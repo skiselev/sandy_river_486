@@ -12,7 +12,7 @@
   )
 
 
-  (text "TODO:\n- Add address decoder for DRAMS#\n- Add DACK decoder\n- Remove Ethernet boot ROM\n- Add 3 pin header for CPU fan - switchable between 5V and 12V with a jumper\n\nCheck:\n- MP0 strap option (chipset pin 50 function)\n- MP1 strap option (chipser pins 192 and 193 function)\n- MP2 strap option (chipset pins 108 and 47 function)\n- Chipset power management signals, pins: 62, 156, 160\n- Processor RESET and SRESET connections\n- (82C602) XD7, XD6 and XD4 strap options \n- (82C602) XD4 strap - add 2.2k pull-down to enable RTC\n- (82C602) Load capacitors for RTC crystal?\n- Reset circuit (button + PWRGD)\n\nP24T Manual:\nCPU EWBE# - NC or tied LOW (internall pull-down)\nCPU BLEN# - NC or tied HIGH (internall pull-up)\n\n74xx Logic:\n74F244 x 2 - DRAM address and control buffers?\n74F138 - DACK decode?\n74LS157 - Interrupt encode?\n7407 - ?\n74F08 - ?\n74F245 - CA[23:16] - LA[23:17],SA[19:16]\nCheck ICs under keyboard controller"
+  (text "TODO:\n- Add address decoder for DRAMS#\n- Add DACK decoder\n- Remove Ethernet boot ROM\n- Add 3 pin header for CPU fan - switchable between 5V and 12V with a jumper\n\nCheck:\n- MP0 strap option (chipset pin 50 function)\n- MP1 strap option (chipser pins 192 and 193 function)\n- MP2 strap option (chipset pins 108 and 47 function)\n- Chipset power management signals, pins: 62, 156, 160\n- Processor RESET and SRESET connections\n- (82C602) XD7, XD6 and XD4 strap options \n- (82C602) XD4 strap - add 2.2k pull-down to enable RTC\n- (82C602) Load capacitors for RTC crystal?\n- Reset circuit (button + PWRGD)\n- Cache address lines\n\nP24T Manual:\nCPU EWBE# - NC or tied LOW (internall pull-down)\nCPU BLEN# - NC or tied HIGH (internall pull-up)\n\n74xx Logic:\n74F244 x 2 - DRAM address and control buffers?\n74F138 - DACK decoder\n74LS157 - Interrupt selector\n7407 - Keyboard buffers; anything else?\n74F08 x 2 - Cache byte enable / chip select; what is the second chip?\n74LS14 - ?\n74F245 - CA[23:16] - LA[23:17],SA[19:16]\n\nChecked:\n- RTC crystal connection - what is the value of load capacitors?\n- Cache data signals\n- Cache control signals + cache configuration jumpers\n- Cache A2/A3 address lines"
     (at 152.4 127 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid f9fdab0b-0971-4c0c-831c-cda73093deb5)
@@ -398,6 +398,12 @@
     (path "/00000000-0000-0000-0000-0000640ab57c/00000000-0000-0000-0000-000062b3d13a"
       (reference "#PWR0154") (unit 1) (value "VCC") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-000064106181/1a6e030b-bd9d-4492-beaf-de8546171e7c"
+      (reference "#PWR0155") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000064106181/43366b22-1206-4971-a726-7a7a1dc13084"
+      (reference "#PWR0156") (unit 1) (value "GND") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-000064106181/00000000-0000-0000-0000-0000621b2276"
       (reference "#PWR0157") (unit 1) (value "GND") (footprint "")
     )
@@ -446,6 +452,9 @@
     (path "/00000000-0000-0000-0000-000064106181/fad4d0ae-c82f-4184-bf33-a376f1461b85"
       (reference "#PWR0172") (unit 1) (value "VCC") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-0000639ce028/b545dce1-9c85-4083-ac19-a759d5c9f99f"
+      (reference "#PWR0173") (unit 1) (value "GND") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-000064106181/7eb153c5-8a4d-4bbe-902a-62017e3bbe18"
       (reference "#PWR0174") (unit 1) (value "GND") (footprint "")
     )
@@ -466,6 +475,12 @@
     )
     (path "/00000000-0000-0000-0000-0000638712fb/00000000-0000-0000-0000-00006395c1b2"
       (reference "#PWR0180") (unit 1) (value "VCC") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/dcadb763-230c-4ef5-9a4f-6bc7914bff86"
+      (reference "#PWR0181") (unit 1) (value "VCC") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/6c0dc626-6e42-4e9b-b909-af60f301c6b6"
+      (reference "#PWR0182") (unit 1) (value "VCC") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000638712fb/00000000-0000-0000-0000-000063bb7eaf"
       (reference "#PWR0183") (unit 1) (value "GND") (footprint "")
@@ -545,10 +560,10 @@
     (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-000063bf6f4e"
       (reference "#PWR0208") (unit 1) (value "VCC") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-000063feb0c4"
+    (path "/00000000-0000-0000-0000-0000639ce028/b5d3a120-7ec7-46e4-9cca-0e75416c29e0"
       (reference "#PWR0209") (unit 1) (value "VCC") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-000064077974"
+    (path "/00000000-0000-0000-0000-0000639ce028/a55e1e24-e8fe-4fd9-bac2-33d54adcc119"
       (reference "#PWR0210") (unit 1) (value "VCC") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000638712fb/00000000-0000-0000-0000-000064c10faa"
@@ -1289,6 +1304,12 @@
     (path "/00000000-0000-0000-0000-00006ecde433/00000000-0000-0000-0000-000058fcba33"
       (reference "C90") (unit 1) (value "22uF") (footprint "Capacitor_Tantalum_SMD:CP_EIA-3528-15_AVX-H_Pad1.50x2.35mm_HandSolder")
     )
+    (path "/00000000-0000-0000-0000-000064106181/ff74cc83-255e-44fb-ae6b-1610ba9da117"
+      (reference "C101") (unit 1) (value "5pF") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000064106181/aeb48718-394e-4854-9128-4a0de3018dbb"
+      (reference "C102") (unit 1) (value "5pF") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-0000655ddd04/00000000-0000-0000-0000-000065755911"
       (reference "C121") (unit 1) (value "47pF") (footprint "")
     )
@@ -1577,17 +1598,20 @@
     (path "/00000000-0000-0000-0000-000066b27913/00000000-0000-0000-0000-000068e9ea39"
       (reference "JP53") (unit 1) (value "Ready?!") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-000063f89394"
-      (reference "JP801") (unit 1) (value "32K/8K Tag IC Size") (footprint "")
+    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-00006436a88a"
+      (reference "JP801") (unit 1) (value "One/Two Cache Banks") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-00006407732b"
-      (reference "JP802") (unit 1) (value "32K/8K Cache IC Size") (footprint "")
+      (reference "JP802") (unit 1) (value "8K/32K or 16K  Tag Size") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-000063e2a379"
-      (reference "JP803") (unit 1) (value "One/Two Cache Banks") (footprint "")
+    (path "/00000000-0000-0000-0000-0000639ce028/ed48052a-b2cf-4888-8b4e-443e953eb653"
+      (reference "JP803") (unit 1) (value "Cache A18") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-00006436a88a"
-      (reference "JP804") (unit 1) (value "One/Two Cache Banks") (footprint "")
+    (path "/00000000-0000-0000-0000-0000639ce028/c8e0883d-245d-49ca-bf3d-1ef01dac9e54"
+      (reference "JP804") (unit 1) (value "Cache A17") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/36ca0365-6df4-4965-9b39-ab00d06eec83"
+      (reference "JP805") (unit 1) (value "Cache A16") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000066b27913/00000000-0000-0000-0000-0000684ea034"
       (reference "L1") (unit 1) (value "2.7uH") (footprint "")
@@ -1784,6 +1808,27 @@
     (path "/00000000-0000-0000-0000-0000638712fb/00000000-0000-0000-0000-00006d048075"
       (reference "R652") (unit 1) (value "1k") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-0000639ce028/c05d0ee7-36ff-4cb5-880f-853151621155"
+      (reference "R801") (unit 1) (value "10k") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/14f60101-3e04-463e-849c-69bc2ce34821"
+      (reference "R802") (unit 1) (value "10k") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/83cad221-38bb-4be4-b050-4641d249842b"
+      (reference "R803") (unit 1) (value "10k") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/d043ff89-469a-45a8-931b-464c1388540a"
+      (reference "R804") (unit 1) (value "22") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/5b16d7cd-0a5b-4436-afed-8dea69449887"
+      (reference "R805") (unit 1) (value "22") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/e7938a44-3bcf-48fb-a9eb-29d3dc35dcbe"
+      (reference "R806") (unit 1) (value "10") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/e090f588-bbd1-4bcd-92a7-48e83e17bd5f"
+      (reference "R807") (unit 1) (value "1k") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-0000639b00c7/00000000-0000-0000-0000-000065ce02ef"
       (reference "RN1") (unit 1) (value "4.7k") (footprint "Resistor_THT:R_Array_SIP9")
     )
@@ -1870,6 +1915,15 @@
     )
     (path "/00000000-0000-0000-0000-0000640ab57c/00000000-0000-0000-0000-000063028d83"
       (reference "RN305") (unit 1) (value "33") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/216e8e71-c4bc-413a-8ccc-4e62e6c5f5ab"
+      (reference "RN801") (unit 1) (value "22") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/fb9ec19f-22b1-4348-817d-bcf78672cbc3"
+      (reference "RN802") (unit 1) (value "22") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000639ce028/ede12275-3708-4d01-9850-72ebb0d44367"
+      (reference "RN803") (unit 1) (value "22") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000638712fb/00000000-0000-0000-0000-000064e3bb5e"
       (reference "SW1") (unit 1) (value "POWER") (footprint "")
@@ -2098,12 +2152,6 @@
     )
     (path "/00000000-0000-0000-0000-0000638712fb/00000000-0000-0000-0000-000063bb4bd5"
       (reference "U810") (unit 5) (value "74F08") (footprint "")
-    )
-    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-0000641b7d1f"
-      (reference "U811") (unit 1) (value "74F125") (footprint "")
-    )
-    (path "/00000000-0000-0000-0000-0000639ce028/00000000-0000-0000-0000-0000641b8931"
-      (reference "U811") (unit 2) (value "74F125") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000638712fb/00000000-0000-0000-0000-000063929431"
       (reference "X1") (unit 1) (value "14.31818MHz") (footprint "Oscillator:Oscillator_DIP-8")
