@@ -5,4 +5,6 @@ Open-source 486 ATX Motherboard
 * 2022-10-05
   * Version 0.1 - Initial schematic
 * 2022-10-06
-  * Version 0.2 - Update cache schematic
+  * Version 0.2 - Updated cache schematic
+* 2022-10-13
+  * Version 0.3 - Updated DRAM schematic, pull-ups/pull-downs, CPU configuration jumpers

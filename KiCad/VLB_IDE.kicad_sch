@@ -1446,7 +1446,6 @@
     )
   )
 
-
   (junction (at 234.95 127) (diameter 0) (color 0 0 0 0)
     (uuid 006e2d2d-ea55-4517-8464-6fa4323dbbb5)
   )
@@ -3601,7 +3600,7 @@
   (symbol (lib_id "Device:R") (at 196.85 101.6 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-00006e8da349)
-    (property "Reference" "R72" (id 0) (at 196.85 96.3422 90))
+    (property "Reference" "R201" (id 0) (at 196.85 96.3422 90))
     (property "Value" "4.7k" (id 1) (at 196.85 98.6536 90))
     (property "Footprint" "" (id 2) (at 196.85 99.822 90)
       (effects (font (size 1.27 1.27)) hide)
