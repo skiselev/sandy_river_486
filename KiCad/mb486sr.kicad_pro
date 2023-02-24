@@ -496,6 +496,10 @@
     [
       "00000000-0000-0000-0000-00006ffe9bec",
       "AD1816 Audio Controller"
+    ],
+    [
+      "29aeee43-2869-4080-920c-a693b0bc5770",
+      "Decoupling Dapacitors"
     ]
   ],
   "text_variables": {}

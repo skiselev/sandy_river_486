@@ -4088,7 +4088,7 @@
   (symbol (lib_id "Device:Crystal") (at 93.98 144.78 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-000058fb47c4)
-    (property "Reference" "Y3" (id 0) (at 97.79 144.78 0))
+    (property "Reference" "Y4" (id 0) (at 97.79 144.78 0))
     (property "Value" "20MHz" (id 1) (at 90.17 144.78 0))
     (property "Footprint" "My_Components:Crystal_HC-49U_Vert" (id 2) (at 93.98 144.78 0)
       (effects (font (size 1.27 1.27)) hide)

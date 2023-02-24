@@ -5792,7 +5792,7 @@
   (symbol (lib_id "Device:Crystal_Small") (at 38.1 139.7 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-00006bc5b8ac)
-    (property "Reference" "Y2" (id 0) (at 40.3352 138.5316 90)
+    (property "Reference" "Y5" (id 0) (at 40.3352 138.5316 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "24MHz" (id 1) (at 40.3352 140.843 90)
