@@ -10,3 +10,5 @@ Open-source 486 ATX Motherboard
   * Version 0.3 - Updated DRAM schematic, pull-ups/pull-downs, CPU configuration jumpers
 * 2022-11-01
   * Version 0.4 - Updated chipset schematic
+* 2023-02-23
+  * Version 0.5 - More schematic updates. Remove old KiCad files
